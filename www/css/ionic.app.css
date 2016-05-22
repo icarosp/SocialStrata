@@ -9736,6 +9736,9 @@ button {
   font-weight: bold;
   font-size: 17px; }
 
+.home .item {
+  background-color: #fafafa; }
+
 .landing {
   background-image: url("../img/backgroundIMG.jpg");
   -webkit-background-size: cover;
@@ -9785,6 +9788,12 @@ img {
   color: #fff; }
 
 .home {
+  background-image: url("../img/backgroundIMG.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover; }
+
+.profile {
   background-image: url("../img/backgroundIMG.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;

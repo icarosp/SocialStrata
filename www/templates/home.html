@@ -1,4 +1,4 @@
-<ion-view title="Home">
+<ion-view title="Home" id="home">
     <ion-content padding="true" class="has-header home">
       <!-- Logo -->
       <div class="row">
@@ -7,7 +7,11 @@
         </div>
       </div>
 
-        <a ui-sref="menu" id="homeAfterLogin-button102" class=" button button-stable button-small ">Navigate</a>
+      <button class="button" ng-click="goMenu()">
+        <i class="ion-navicon-round"></i></span>
+      </button>
+
+        <!--<a ui-sref="menu" id="homeAfterLogin-button102" class=" button button-stable button-small ">Navigate</a>-->
 
         <div class="card" ng-repeat="notice in notices">
             <div class="item item-divider">
@@ -18,7 +22,8 @@
             </div>
         </div>
 
-        <a ui-sref="notices2" id="homeAfterLogin-button54" style="text-align:right;" class=" button button-positive button-small ">See more</a>
+        <a ui-sref="notices" id="homeAfterLogin-button55" style="text-align:right;" class=" button button-positive button-small ">See more</a>
+
         <div class="spacer" style="width: 285px; height: 13px;"></div>
         <div class="item item-body " id="homeAfterLogin-list-item-container15">
             <p id="homeAfterLogin-markdown39" style="margin-top:0px;color:#000000;" class=" ">
@@ -27,6 +32,7 @@
                 <strong>Scott</strong>
             </p>
         </div>
+
         <a ui-sref="events" id="homeAfterLogin-button55" style="text-align:right;" class=" button button-positive button-small ">See more</a>
         <div class="spacer" style="width: 285px; height: 12px;"></div>
         <div class="item item-body " id="homeAfterLogin-list-item-container16">

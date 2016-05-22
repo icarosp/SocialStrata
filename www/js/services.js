@@ -1,10 +1,13 @@
-angular.module('app.services', [])
+angular.module('app.services', ['ngResource'])
 
-.factory('BlankFactory', [function(){
+.factory('db', function ($resource) {
+  return $resource = {
+    _add: function(obj) {
+      localStorage.setItem('SocialStrata', JSON.stringify(obj));
+    },
 
-}])
-
-.service('BlankService', [function(){
-
-}]);
-
+    _get: function() {
+      return JSON.parse(localStorage.getItem('SocialStrata'));
+    }
+  }
+});

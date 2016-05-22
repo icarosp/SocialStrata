@@ -3,23 +3,23 @@
         <img src="img/logolegenda.png"></img>
 
         <!-- Facebook -->
-        <button class=" button button-positive  button-block " ng-click="joinFacebook()">Login with Facebook!</button>
+        <button class=" button button-positive  button-block " ng-click="goFacebook()">Login with Facebook!</button>
 
 
-        <form id="login-form4" class="list ">
+        <form name="formLogin" ng-submit="login(formLogin)" class="list ">
             <label class="item item-input " id="login-input4">
-                <span class="input-label">Username</span>
-                <input type="text" placeholder="">
+                <span class="input-label">Email</span>
+                <input type="text" ng-model="formLogin.user">
             </label>
             <label class="item item-input " id="login-input5">
                 <span class="input-label">Password</span>
-                <input type="text" placeholder="">
+                <input type="password" ng-model="formLogin.password">
             </label>
-        </form>
 
-        <button class="button button-block button-royal" ng-click="goHome()">
-          Login
-        </button>
+            <button  type="submit" class="button button-block button-royal">
+              Login
+            </button>
+        </form>
 
         <div class="mensagem">
             <strong>Don't have an account?</strong>

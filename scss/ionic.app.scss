@@ -31,6 +31,9 @@ button{box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); font-weight: bold; font-size:17
 
 $backgroundImage:"../img/backgroundIMG.jpg";
 
+.home .item{
+  background-color: #fafafa;
+}
 
 .landing{
   background-image: url($backgroundImage);
@@ -94,6 +97,13 @@ img{
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
+}
+
+.profile{
+    background-image: url($backgroundImage);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
 }
 
 .signin{

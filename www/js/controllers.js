@@ -18,8 +18,28 @@ angular.module('app.controllers', [])
 })
 
 .controller('homeCtrl', function($scope, $state,$http) {
+
+  $scope.goMenu = function(){
+      $state.go('menu', {}, {cache: false });
+  }
+
+
+
+
+
   $http.get('https://socialstrata.azurewebsites.net/api/notices/getallnotices').then(function(response){
-    $scope.notices = response.data;
+    //var allNotices  = response.data;
+
+    var topNotices = [];
+
+    for (var i = 0; i < 2; i++) {
+        topNotices.push({
+            Description: response.data[i].Description,
+            Title: response.data[i].Title
+        });
+    };
+
+    $scope.notices = topNotices;
   }, function(error){
       console.log();
   });
@@ -27,7 +47,10 @@ angular.module('app.controllers', [])
 
 .controller('signUpCtrl', function($scope, $state, $http, $ionicPopup) {
   $scope.joinFacebook = function(){
-      window.location = "https://m.facebook.com/v2.6/dialog/oauth?redirect_uri=https%3A%2F%2Fsocialstrata.azurewebsites.net%2Fsignin-facebook&state=IFEUFjAkVan4yj1ynwM-SoBOV4QIwE54Vtd5Ts5nYg0IL4YPhb-9AabgtzoFwttHmxVqQrBpAtvPl8KrNxWkqetGXovwJWvFdBEmYb6YYCfpAa8YYa7FFcVbjnm9VV_mz-HI0xSzGy-3RzyKpQUqj-tV3DBYZAT_V6e2HdrOjw4Dgtua0TZl4uqYftRHHNG9ryl6UK4kQqElOBGkXNjUqfcwDdEPp-yNuIrmgLCI1JA&scope&response_type=code&client_id=467010280174696";
+    var alertPopup = $ionicPopup.alert({
+      title: 'Error',
+      template: 'Not implemented yet'
+    });
   }
 
   $scope.registration = function(form){
@@ -56,14 +79,65 @@ angular.module('app.controllers', [])
   }
 })
 
-.controller('loginCtrl', function($scope, $state) {
-  $scope.goHome = function(){
-      $state.go('home', {}, {cache: false });
+.controller('loginCtrl', function($scope, $state,$ionicPopup, $http, db) {
+
+  $scope.goFacebook = function(){
+    var alertPopup = $ionicPopup.alert({
+      title: 'Error',
+      template: 'Not implemented yet!'
+    });
+  }
+
+  $scope.login = function(form){
+
+    console.log(form);
+
+    $http({
+      method: 'POST',
+      url: 'https://socialstrata.azurewebsites.net/account/login',
+      data: {
+        Email: form.user,
+        Password: form.password,
+      }
+    }).then(function(response){
+      if(response.data.Success){
+
+        //console.log(response.data.UserId);
+        db._add(response.data);
+
+        $state.go('home', {}, {cache: false });
+      }
+      else{
+        console.log(response.data);
+        var alertPopup = $ionicPopup.alert({
+          title: 'Error',
+          template: response.data.Messages
+        });
+      }
+    }, function(error){
+        console.log(error);
+    });
   }
 
   $scope.goRegister = function(){
       $state.go('signUp', {}, {cache: false });
   }
+})
+
+.controller('profileCtrl', function($scope,$state,$http,db) {
+  $http({
+    method: 'GET',
+    url: 'https://socialstrata.azurewebsites.net/api/People/GetProfile/'+db._get().UserId,
+  }).then(function(response){
+    console.log(response.data);
+  }, function(error){
+      console.log();
+  });
+
+  $scope.updateProfile = function(){
+      $state.go('home', {}, {cache: false });
+  };
+
 })
 
 .controller('menuCtrl', function($scope) {
@@ -98,8 +172,13 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('noticesCtrl', function($scope) {
-
+.controller('noticesCtrl', function($scope,$http) {
+  $http.get('https://socialstrata.azurewebsites.net/api/notices/getallnotices').then(function(response){
+    console.log(response.data);
+    $scope.notices = response.data;
+  }, function(error){
+      console.log();
+  });
 })
 
 .controller('eventsCtrl', function($scope) {
@@ -119,10 +198,6 @@ angular.module('app.controllers', [])
 })
 
 .controller('notices2Ctrl', function($scope) {
-
-})
-
-.controller('registrationCtrl', function($scope) {
 
 })
 

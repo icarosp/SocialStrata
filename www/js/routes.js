@@ -116,10 +116,10 @@ angular.module('app.routes', [])
     controller: 'notices2Ctrl'
   })
 
-  .state('registration', {
-    url: '/register',
-    templateUrl: 'templates/registration.html',
-    controller: 'registrationCtrl'
+  .state('profile', {
+    url: '/profile',
+    templateUrl: 'templates/profile.html',
+    controller: 'profileCtrl'
   })
 
   .state('addItem', {
