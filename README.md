@@ -6,6 +6,6 @@ Technology Stack Used: Ionic Framework (AngularJS/SASS/Cordova)
 Group Members:
 
 Marcela Cavalcanti Rosa
-Maurício Neri
-Leonardo Bulhões
-Icaro Fernandez Guselian
+<br>Maurício Neri
+<br>Leonardo Bulhões
+<br>Icaro Fernandez Guselian
