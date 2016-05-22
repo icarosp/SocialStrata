@@ -9,14 +9,15 @@
 
         <a ui-sref="menu" id="homeAfterLogin-button102" class=" button button-stable button-small ">Navigate</a>
 
-        <div class="spacer" style="width: 285px; height: 14px;"></div>
-        <div class="item item-body " id="homeAfterLogin-list-item-container14">
-            <p id="homeAfterLogin-markdown38" style="margin-top:0px;color:#000000;" class=" ">
-                <strong>Notices</strong>
-                The garden needs watering tomorrow, if you want to help join us at 15 pm
-                <strong>Nathalie</strong>
-            </p>
+        <div class="card" ng-repeat="notice in notices">
+            <div class="item item-divider">
+               <span class="noticesTitle"> <i class="ion-alert-circled"></i> Notice - {{notice.Title}}</span>
+            </div>
+            <div class="item item-text-wrap">
+              <span>{{notice.Description}}</span>
+            </div>
         </div>
+
         <a ui-sref="notices2" id="homeAfterLogin-button54" style="text-align:right;" class=" button button-positive button-small ">See more</a>
         <div class="spacer" style="width: 285px; height: 13px;"></div>
         <div class="item item-body " id="homeAfterLogin-list-item-container15">

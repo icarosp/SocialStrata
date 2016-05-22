@@ -20,10 +20,10 @@ angular.module('app.routes', [])
     controller: 'homeCtrl'
   })
 
-  .state('signIn', {
-    url: '/signIn',
-    templateUrl: 'templates/signIn.html',
-    controller: 'signInCtrl'
+  .state('signUp', {
+    url: '/signUp',
+    templateUrl: 'templates/signUp.html',
+    controller: 'signUpCtrl'
   })
 
   .state('login', {

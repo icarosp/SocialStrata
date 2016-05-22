@@ -9,23 +9,23 @@ angular.module('app.controllers', [])
       console.log();
   });
 
-
-
   $scope.goLogin = function(){
       $state.go('login', {}, {cache: false });
   }
-
   $scope.goSignUp = function(){
-      $state.go('signIn', {}, {cache: false });
+      $state.go('signUp', {}, {cache: false });
   }
-
-
 })
 
-.controller('homeCtrl', function($scope, $state) {
+.controller('homeCtrl', function($scope, $state,$http) {
+  $http.get('https://socialstrata.azurewebsites.net/api/notices/getallnotices').then(function(response){
+    $scope.notices = response.data;
+  }, function(error){
+      console.log();
+  });
 })
 
-.controller('signInCtrl', function($scope, $state, $http) {
+.controller('signUpCtrl', function($scope, $state, $http, $ionicPopup) {
   $scope.joinFacebook = function(){
       window.location = "https://m.facebook.com/v2.6/dialog/oauth?redirect_uri=https%3A%2F%2Fsocialstrata.azurewebsites.net%2Fsignin-facebook&state=IFEUFjAkVan4yj1ynwM-SoBOV4QIwE54Vtd5Ts5nYg0IL4YPhb-9AabgtzoFwttHmxVqQrBpAtvPl8KrNxWkqetGXovwJWvFdBEmYb6YYCfpAa8YYa7FFcVbjnm9VV_mz-HI0xSzGy-3RzyKpQUqj-tV3DBYZAT_V6e2HdrOjw4Dgtua0TZl4uqYftRHHNG9ryl6UK4kQqElOBGkXNjUqfcwDdEPp-yNuIrmgLCI1JA&scope&response_type=code&client_id=467010280174696";
   }
@@ -35,12 +35,21 @@ angular.module('app.controllers', [])
       method: 'POST',
       url: 'https://socialstrata.azurewebsites.net/account/register',
       data: {
-        Email: form.Password,
+        Email: form.Email,
         Password: form.Password,
         ConfirmPassword: form.ConfirmPassword
       }
     }).then(function(response){
-      console.log(response.data);
+      if(response.data.Success){
+        $state.go('home', {}, {cache: false });
+      }
+      else{
+        console.log(response.data);
+        var alertPopup = $ionicPopup.alert({
+          title: 'Error',
+          template: response.data.Messages
+        });
+      }
     }, function(error){
         console.log();
     });
@@ -53,7 +62,7 @@ angular.module('app.controllers', [])
   }
 
   $scope.goRegister = function(){
-      $state.go('home', {}, {cache: false });
+      $state.go('signUp', {}, {cache: false });
   }
 })
 
