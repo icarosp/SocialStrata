@@ -8,6 +8,6 @@ Group Members:
 Icaro Fernandez Guselian
 <br>Leonardo Bulhões
 <br>Marcela Cavalcanti Rosa
-<br>Maurício Neri
+<br>Mauricio Pontalti Neri
 
 
