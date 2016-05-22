@@ -1,6 +1,6 @@
 <ion-view title="Home">
     <ion-content padding="true" class="landing">
-      <!-- Logo / Login button-->
+      <!-- Logo -->
       <div class="row">
         <div class="col">
           <img src="img/logolegenda.png">
@@ -13,11 +13,10 @@
 
       <div class="card">
           <div class="item item-divider">
-             <span class="noticesTitle"> <i class="ion-alert-circled"></i> Notices</span>
+             <span class="noticesTitle"> <i class="ion-alert-circled"></i> Notice - {{notices.Title}}</span>
           </div>
           <div class="item item-text-wrap">
-            <span>The garden needs watering tomorrow, if you want to help join us at 15 pm.</span>
-            <strong>Nathalie</strong>
+            <span>{{notices.Description}}</span>
           </div>
       </div>
 
@@ -26,10 +25,6 @@
             <div class="row">
               <div class="col-20">
                 <span class="noticesTitle"> <i class="ion-alert-circled"></i> Events</span>
-              </div>
-              <div class="col-40">
-              </div>
-              <div class="col-60">
                 <i class="ion-calendar"></i> 05/21 - 11:30 PM</i>
               </div>
             </div>

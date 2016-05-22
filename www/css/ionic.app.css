@@ -9737,7 +9737,7 @@ button {
   font-size: 17px; }
 
 .landing {
-  background-image: url(../img/backgroundIMG.jpg);
+  background-image: url("../img/backgroundIMG.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover; }
@@ -9753,7 +9753,7 @@ button {
   width: 90%;
   margin: auto; }
 
-.landing img {
+img {
   width: 100%; }
 
 .landing .row .col {
@@ -9783,3 +9783,20 @@ button {
   margin-right: auto;
   background-color: #FF9800;
   color: #fff; }
+
+.home {
+  background-image: url("../img/backgroundIMG.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover; }
+
+.signin {
+  background-image: url("../img/backgroundIMG.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover; }
+
+.signin .or {
+  color: white;
+  font-weight: bold;
+  align: center; }

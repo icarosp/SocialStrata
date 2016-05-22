@@ -1,6 +1,16 @@
 angular.module('app.controllers', [])
 
-.controller('landingCtrl', function($scope, $state) {
+.controller('landingCtrl', function($scope, $state,$http) {
+
+  $http.get('https://socialstrata.azurewebsites.net/api/notices/getallnotices').then(function(response){
+    console.log(response.data);
+    $scope.notices = response.data[0];
+  }, function(error){
+      console.log();
+  });
+
+
+
   $scope.goLogin = function(){
       $state.go('login', {}, {cache: false });
   }
@@ -8,13 +18,33 @@ angular.module('app.controllers', [])
   $scope.goSignUp = function(){
       $state.go('signIn', {}, {cache: false });
   }
+
+
 })
 
 .controller('homeCtrl', function($scope, $state) {
 })
 
-.controller('signInCtrl', function($scope, $state) {
+.controller('signInCtrl', function($scope, $state, $http) {
+  $scope.joinFacebook = function(){
+      window.location = "https://m.facebook.com/v2.6/dialog/oauth?redirect_uri=https%3A%2F%2Fsocialstrata.azurewebsites.net%2Fsignin-facebook&state=IFEUFjAkVan4yj1ynwM-SoBOV4QIwE54Vtd5Ts5nYg0IL4YPhb-9AabgtzoFwttHmxVqQrBpAtvPl8KrNxWkqetGXovwJWvFdBEmYb6YYCfpAa8YYa7FFcVbjnm9VV_mz-HI0xSzGy-3RzyKpQUqj-tV3DBYZAT_V6e2HdrOjw4Dgtua0TZl4uqYftRHHNG9ryl6UK4kQqElOBGkXNjUqfcwDdEPp-yNuIrmgLCI1JA&scope&response_type=code&client_id=467010280174696";
+  }
 
+  $scope.registration = function(form){
+    $http({
+      method: 'POST',
+      url: 'https://socialstrata.azurewebsites.net/account/register',
+      data: {
+        Email: form.Password,
+        Password: form.Password,
+        ConfirmPassword: form.ConfirmPassword
+      }
+    }).then(function(response){
+      console.log(response.data);
+    }, function(error){
+        console.log();
+    });
+  }
 })
 
 .controller('loginCtrl', function($scope, $state) {

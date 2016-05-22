@@ -29,7 +29,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 //general
 button{box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); font-weight: bold; font-size:17px;}
 
-$backgroundImage = "../img/backgroundIMG.jpg";
+$backgroundImage:"../img/backgroundIMG.jpg";
 
 
 .landing{
@@ -52,7 +52,7 @@ $backgroundImage = "../img/backgroundIMG.jpg";
   margin: auto;
 }
 
-.landing img{
+img{
   width: 100%;
 }
 
@@ -94,4 +94,17 @@ $backgroundImage = "../img/backgroundIMG.jpg";
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
+}
+
+.signin{
+    background-image: url($backgroundImage);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+.signin .or{
+  color: white;
+  font-weight: bold;
+  align: center;
 }
