@@ -1,7 +1,7 @@
 # SocialStrata
 Project built for the #Vanhackathon
 
-Technology Stack Used: Ionic Framework (AngularJS/SASS/Cordova)
+Technology Stack Used: Ionic Framework (AngularJS/SASS/Cordova)/Azure/SQL Server/C#(WebAPI/Entity Framework/Identity Framework/Code First)
 
 Group Members:
 
