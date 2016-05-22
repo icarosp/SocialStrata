@@ -1,0 +1,97 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+//colors
+$royal:                       #EA5B0C !default;
+$assertive:                   #FF9800 !default;
+
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+//general
+button{box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); font-weight: bold; font-size:17px;}
+
+$backgroundImage = "../img/backgroundIMG.jpg";
+
+
+.landing{
+  background-image: url($backgroundImage);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+.landing h1{
+  color: white;
+  text-align: center;
+  text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+  padding-bottom: 5%;
+}
+
+.landing .imageContainer{
+  height: 20%;
+  width: 90%;
+  margin: auto;
+}
+
+.landing img{
+  width: 100%;
+}
+
+.landing .row .col{
+  padding: 0px;
+  margin: 0px;
+  }
+
+.landing .item{
+  padding: 6px;
+}
+
+.login{
+  background-image: url(../img/backgroundIMG.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+.login img{
+  width: 100%;
+}
+
+.login .mensagem{
+  border-radius: 25px;
+  height: 4%;
+  width: 50%;
+  background-color: #FFF;
+  text-align: center;
+  font-size: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $assertive;
+  color: #fff;
+}
+
+.home{
+  background-image: url($backgroundImage);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}

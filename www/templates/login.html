@@ -1,0 +1,27 @@
+<ion-view title="Login">
+    <ion-content padding="true" class="login">
+        <img src="img/logolegenda.png"></img>
+        <form id="login-form4" class="list ">
+            <label class="item item-input " id="login-input4">
+                <span class="input-label">Username</span>
+                <input type="text" placeholder="">
+            </label>
+            <label class="item item-input " id="login-input5">
+                <span class="input-label">Password</span>
+                <input type="text" placeholder="">
+            </label>
+        </form>
+
+        <button class="button button-block button-royal" ng-click="goHome()">
+          Login
+        </button>
+
+        <div class="mensagem">
+            <strong>Don't have an account?</strong>
+        </div>
+
+        <button class="button button-block button-assertive" ng-click="goRegister()">
+          Sign up for free!
+        </button>
+    </ion-content>
+</ion-view>

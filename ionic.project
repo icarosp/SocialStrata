@@ -1,0 +1,12 @@
+{
+  "name": "SocialStrata",
+  "app_id": "81b3d22c",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}
