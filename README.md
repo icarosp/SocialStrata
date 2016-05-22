@@ -1,4 +1,11 @@
 # SocialStrata
-Project for the #Vanhackathon
+Project built for the #Vanhackathon
 
-TEST
+Technology Stack Used: Ionic Framework (AngularJS/SASS/Cordova)
+
+Group Members:
+
+Marcela Cavalcanti Rosa
+Maurício Neri
+Leonardo Bulhões
+Icaro Fernandez Guselian
