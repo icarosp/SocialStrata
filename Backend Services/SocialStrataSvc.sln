@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{779D3A57-47F7-45D8-9AEA-887EA9F735C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{DAB6037C-46A1-44CC-8C24-4173D9584FA3}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Scripts\Deploy-AzureResourceGroup-2.ps1 = PublishScripts\Scripts\Deploy-AzureResourceGroup-2.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{BDB6441A-6AAF-4EE5-86AE-F2946B0A2940}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Templates\SocialStrata.json = PublishScripts\Templates\SocialStrata.json
+		PublishScripts\Templates\SocialStrata.param.dev.json = PublishScripts\Templates\SocialStrata.param.dev.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialStrata", "SocialStrata\SocialStrata.csproj", "{04D5CBBB-F04F-4CB9-9C66-592F10633E14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04D5CBBB-F04F-4CB9-9C66-592F10633E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04D5CBBB-F04F-4CB9-9C66-592F10633E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04D5CBBB-F04F-4CB9-9C66-592F10633E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04D5CBBB-F04F-4CB9-9C66-592F10633E14}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DAB6037C-46A1-44CC-8C24-4173D9584FA3} = {779D3A57-47F7-45D8-9AEA-887EA9F735C8}
+		{BDB6441A-6AAF-4EE5-86AE-F2946B0A2940} = {779D3A57-47F7-45D8-9AEA-887EA9F735C8}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://socialstrata.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SocialStrata\\SocialStrata.csproj
+		SccProjectName1 = SocialStrata
+		SccLocalPath1 = SocialStrata
+	EndGlobalSection
+EndGlobal

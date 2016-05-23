@@ -1,0 +1,32 @@
+{
+  "siteName": {
+    "value": "SocialStrata"
+  },
+  "hostingPlanName": {
+    "value": "AppServicePlan"
+  },
+  "siteLocation": {
+    "value": "Canada Central"
+  },
+  "sku": {
+    "value": "Free"
+  },
+  "workerSize": {
+    "value": "0"
+  },
+  "serverName": {
+    "value": "social-strata-server"
+  },
+  "serverLocation": {
+    "value": "Canada Central"
+  },
+  "administratorLogin": {
+    "value": "social-strata-server"
+  },
+  "administratorLoginPassword": {
+    "value": "P@ssw0rd"
+  },
+  "databaseName": {
+    "value": "SS"
+  }
+}
